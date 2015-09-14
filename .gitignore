@@ -1,5 +1,1 @@
-node_modules/
-dist/
-*.bundle.*
-bundle.*
-*.log
+node_modules

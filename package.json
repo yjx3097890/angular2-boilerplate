@@ -1,33 +1,46 @@
 {
-  "name": "client_app_template",
-  "version": "1.0.0",
+  "name": "angular2-es6-webpack-quickstart",
+  "version": "0.0.1",
+  "description": "repository for starter with angular2,es6 and webpack",
+  "main": "main.js",
   "scripts": {
-    "bundlejs": "./node_modules/webpack/bin/webpack.js",
-    "watch": "./node_modules/webpack/bin/webpack.js -w",
-    "start": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "angular2",
+    "es6",
+    "webpack"
+  ],
+  "author": "chevalier",
+  "license": "ISC",
   "dependencies": {
-    "a1atscript": "^0.4.4",
-    "angular": "^1.4.4",
     "angular2": "^2.0.0-alpha.37",
-    "babel": "^5.8.21",
-    "babel-core": "^5.8.21",
-    "babel-loader": "^5.3.2",
-    "css-loader": "^0.15.6",
-    "jquery": "^2.1.4",
-    "moment": "^2.10.6",
-    "ng-annotate": "^1.0.2",
-    "ng-annotate-webpack-plugin": "^0.1.2",
-    "reflect-metadata": "^0.1.0",
-    "requirejs": "^2.1.20",
-    "style-loader": "^0.12.3",
-    "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.10.1",
-    "webpack-traceur-loader": "^0.3.0",
-    "zone": "^0.3.4"
+    "reflect-metadata": "^0.1.1",
+    "rx": "^2.5.3",
+    "zone.js": "^0.5.4"
   },
   "devDependencies": {
+    "a1atscript": "^0.4.4",
+    "autoprefixer-loader": "^2.0.0",
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.23",
+    "babel-loader": "^5.3.2",
+    "css-loader": "^0.16.0",
+    "file-loader": "^0.8.4",
+    "image-webpack-loader": "^1.6.1",
+    "imagemin": "^3.2.0",
+    "node-sass": "^3.3.2",
+    "react-mixin": "^1.7.0",
+    "sass-loader": "^2.0.1",
+    "scss-loader": "^0.0.1",
+    "style-loader": "^0.12.3",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.0",
+    "typescript": "^1.6.0-beta",
+    "typescript-simple-loader": "^0.3.7",
     "es6-shim": "^0.33.1",
+    "ng-annotate": "^1.0.2",
+    "raw-loader": "^0.5.1",
     "ng-annotate-webpack-plugin": "^0.1.2"
   }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/angular2_app_template.iml" filepath="$PROJECT_DIR$/.idea/angular2_app_template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/angular2-es6-webpack-quickstart.iml" filepath="$PROJECT_DIR$/.idea/angular2-es6-webpack-quickstart.iml" />
     </modules>
   </component>
 </project>
