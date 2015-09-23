@@ -18,9 +18,12 @@ import { Component, View, bootstrap } from 'nm/angular2/angular2';
     template: '<h1>Hello {{ name }}</h1>'
 })
 class MyAppComponent {
+
+    name: string;
+
     constructor() {
         this.name = 'World';
     }
 }
 
-bootstrap(MyAppComponent);
+export {MyAppComponent};

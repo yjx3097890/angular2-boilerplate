@@ -54,10 +54,15 @@
 
 	var _componentsHelloTemplateHelloTemplateJs = __webpack_require__(217);
 
+	var _componentsDisplayDataDisplayDataJs = __webpack_require__(220);
+
 	var _nmAngular2Angular2 = __webpack_require__(42);
 
-	(0, _nmAngular2Angular2.bootstrap)(_componentsHelloHelloJs.MyAppComponent);
-	//bootstrap(HelloTemplateComponent);
+	//bootstrap(MyAppComponent);//渲染自定义控件
+
+	//bootstrap(HelloTemplateComponent);//渲染自定义的加载自模板的控件
+
+	(0, _nmAngular2Angular2.bootstrap)(_componentsDisplayDataDisplayDataJs.MyAppNgForComponent); //渲染自定义的ngFor模块
 
 /***/ },
 /* 1 */
@@ -67,6 +72,10 @@
 	 * Created by apple on 15/9/14.
 	 */
 	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
@@ -101,7 +110,7 @@
 	    return MyAppComponent;
 	})();
 
-	(0, _nmAngular2Angular2.bootstrap)(MyAppComponent);
+	exports.MyAppComponent = MyAppComponent;
 
 /***/ },
 /* 2 */
@@ -43637,6 +43646,10 @@
 	 */
 	'use strict';
 
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 	__webpack_require__(2);
@@ -43647,12 +43660,6 @@
 
 	var _nmAngular2Angular2 = __webpack_require__(42);
 
-	// import './node_modules/angular/angular.min';
-	// import angular from './node_modules/angular2/angular2'
-	// import {AsModule, Component, Service, View, bootstrap} from './node_modules/a1atscript/dist/a1atscript.bundle';
-
-	// @AsModule('testapp', [])
-
 	var template = __webpack_require__(218);
 
 	var HelloTemplateComponent = (function () {
@@ -43660,7 +43667,6 @@
 	        _classCallCheck(this, _HelloTemplateComponent);
 
 	        this.name = 'World';
-	        console.log(template);
 	    }
 
 	    var _HelloTemplateComponent = HelloTemplateComponent;
@@ -43673,15 +43679,58 @@
 	    return HelloTemplateComponent;
 	})();
 
-	(0, _nmAngular2Angular2.bootstrap)(HelloTemplateComponent); /**
-	                                                            * Created by apple on 15/9/14.
-	                                                            */
+	exports.HelloTemplateComponent = HelloTemplateComponent;
 
 /***/ },
 /* 218 */
 /***/ function(module, exports) {
 
 	module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title></title>\n</head>\n<body>\n    <h1>Hello {{ name }}</h1>\n</body>\n</html>"
+
+/***/ },
+/* 219 */,
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/**
+	 * Created by apple on 15/9/24.
+	 */
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	    value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+	__webpack_require__(2);
+
+	__webpack_require__(26);
+
+	__webpack_require__(41);
+
+	var _nmAngular2Angular2 = __webpack_require__(42);
+
+	var MyAppNgForComponent = (function () {
+	    function MyAppNgForComponent() {
+	        _classCallCheck(this, _MyAppNgForComponent);
+
+	        this.myName = "Alice";
+	        this.names = ["Aarav", "Martín", "Shannon", "Ariana", "Kai"];
+	    }
+
+	    var _MyAppNgForComponent = MyAppNgForComponent;
+	    MyAppNgForComponent = (0, _nmAngular2Angular2.View)({
+	        template: '\n        <p>My name: {{ myName }}</p>\n        <p>Friends:</p>\n        <ul>\n            <li *ng-for="#name of names">\n                {{ name }}\n            </li>\n        </ul>\n    ',
+	        directives: [_nmAngular2Angular2.NgFor]
+	    })(MyAppNgForComponent) || MyAppNgForComponent;
+	    MyAppNgForComponent = (0, _nmAngular2Angular2.Component)({
+	        selector: 'my-app'
+	    })(MyAppNgForComponent) || MyAppNgForComponent;
+	    return MyAppNgForComponent;
+	})();
+
+	exports.MyAppNgForComponent = MyAppNgForComponent;
 
 /***/ }
 /******/ ]);
