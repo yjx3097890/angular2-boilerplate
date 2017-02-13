@@ -1,9 +1,9 @@
 /**
  * Created by apple on 16/5/14.
  */
-import "es6-shim";
+import "core-js";
 import "reflect-metadata";
-require('zone.js/dist/zone');
+import 'zone.js';
 if (process.env.ENV === 'production') {
     // Production
 } else {
