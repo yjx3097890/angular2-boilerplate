@@ -1,15 +1,16 @@
 /**
  * Created by apple on 16/5/14.
  */
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var helpers = require('./helpers');
+const webpack = require('webpack');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const helpers = require('./../src/others/utils');
 
 module.exports = {
     entry: {
-        'polyfills': './src/polyfills.ts',
-        'vendor': './src/vendor.ts',
+        'polyfills': helpers.root('src', 'others', 'polyfills.ts'),
+        'vendor': './src/others/vendor.ts',
         'app': './src/main.ts'
     },
 
@@ -32,6 +33,7 @@ module.exports = {
             },
             {
                 test: /\.html$/,
+                include: [path.resolve(__dirname, "../src/public")],
                 use:[
                     'html-loader'
                 ]
@@ -49,13 +51,13 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: helpers.root('src', 'app'),
+                include: [path.resolve(__dirname, "../src/public")],
                 use:  ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader'] })
 
             },
             {
-                test: /\.css$/,
-                include: helpers.root('src', 'app'),
+                test: /\.(html|css)$/,
+                exclude: [path.resolve(__dirname, "../src/public")],
                 use: [
                     'raw-loader'
                     ]
