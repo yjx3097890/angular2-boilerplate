@@ -3,6 +3,7 @@
  */
 import {Component, OnInit} from "@angular/core";
 import {Router} from "@angular/router";
+import { Observable } from 'rxjs';
 
 import  Hero from '../../models/Hero';
 import {HeroService} from '../../service/HeroService';
@@ -34,26 +35,37 @@ export class HeroListComponent implements OnInit{
     }
 
     getHeroes(): void {
-        this.heroService.getMockHeroes().then(heroes => this.heroes = heroes);
+        this.heroService.getMockHeroes().
+            subscribe((heroes) => this.heroes = heroes,
+            error =>
+            // TODO: real error handling
+            console.log(error)
+        );
     }
 
     addHero(name: string): void {
         name = name.trim();
         if (!name) { return; }
         this.heroService.create(name)
-            .then(hero => {
+            .subscribe(hero => {
                 this.heroes.push(hero);
                 this.selectedHero = null;
-            });
+            },
+                error =>
+                    // TODO: real error handling
+                    console.log(error));
     }
 
     deleteHero(hero: Hero): void {
         this.heroService
-            .delete(hero.id)
-            .then(() => {
+            .del(hero.id)
+            .subscribe(() => {
                 this.heroes = this.heroes.filter(h => h !== hero);
                 if (this.selectedHero === hero) { this.selectedHero = null; }
-            });
+            },
+                error =>
+                    // TODO: real error handling
+                    console.log(error));
     }
 
     gotoDetail(): void {
