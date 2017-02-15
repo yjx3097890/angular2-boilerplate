@@ -25,11 +25,11 @@ export class CrisisDetailComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        // this.route.data
-        //     .subscribe((data: { crisis: Crisis }) => {
-        //         this.editName = data.crisis.name;
-        //         this.crisis = data.crisis;
-        //     });
+        this.route.data
+            .subscribe((data: { crisis: Crisis }) => {
+                this.editName = data.crisis.name;
+                this.crisis = data.crisis;
+            });
 
     }
 
