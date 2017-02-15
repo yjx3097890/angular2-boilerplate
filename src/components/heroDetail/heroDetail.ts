@@ -1,14 +1,10 @@
 
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import 'rxjs/add/operator/switchMap';
-
 
 import  Hero from '../../models/Hero'
 import { HeroService } from '../../service/HeroService';
-
-
 
 @Component({
     moduleId: String(module.id),
@@ -24,7 +20,8 @@ export class HeroDetailComponent implements OnInit {
     constructor(
         private heroService: HeroService,
         private route: ActivatedRoute,
-        private location: Location
+        private location: Location,
+        private router: Router
     ) {
 
     }
@@ -41,7 +38,8 @@ export class HeroDetailComponent implements OnInit {
     }
 
     goBack(): void {
-        this.location.back();
+       // this.location.back();
+        this.router.navigate(['/heroes', { id: this.hero.id, foo: 'foo' }]);
     }
 
 }

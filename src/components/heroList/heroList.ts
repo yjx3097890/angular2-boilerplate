@@ -2,7 +2,7 @@
  * Created by apple on 16/5/14.
  */
 import {Component, OnInit} from "@angular/core";
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute, Params} from "@angular/router";
 import { Observable } from 'rxjs';
 
 import  Hero from '../../models/Hero';
@@ -11,7 +11,7 @@ import {HeroService} from '../../service/HeroService';
 
 @Component({
     moduleId: String(module.id),
-    selector: 'hero-list',
+    selector: 'hero-list', //没用。。
     templateUrl: './heroList.html',
     styleUrls: ['./heroList.css']
 })
@@ -20,27 +20,36 @@ export class HeroListComponent implements OnInit{
     title = 'Tour of Heroes';
     heroes:Hero[];
     selectedHero: Hero;
+    selectedId: number;
 
     constructor(
         private heroService: HeroService,
-        private router: Router
+        private router: Router,
+        private route: ActivatedRoute
     ) { }
 
     ngOnInit() {
-        this.getHeroes();
+       this.route.params
+            .switchMap((params: Params) => {
+                this.selectedId = +params['id'];
+                return this.getHeroes();
+
+            }).subscribe(heroes => {
+               this.heroes = heroes;
+               this.selectedHero = heroes.find((hero)=> this.selectedId === hero.id);
+           }, error =>
+           // TODO: real error handling
+           console.log(error)
+       );
     }
 
     onSelect(hero: Hero): void {
         this.selectedHero = hero;
     }
 
-    getHeroes(): void {
-        this.heroService.getMockHeroes().
-            subscribe((heroes) => this.heroes = heroes,
-            error =>
-            // TODO: real error handling
-            console.log(error)
-        );
+
+    getHeroes(): Observable<Hero[]> {
+        return this.heroService.getMockHeroes();
     }
 
     addHero(name: string): void {
