@@ -1,32 +1,34 @@
-/**
- * Created by apple on 16/5/14.
- */
+
 module.exports = {
     devtools: 'source-map',
 
     resolve: {
-        extensions: ['', '.ts', '.js']
+        extensions: ['.ts', '.js']
     },
 
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.ts$/,
-                loader: 'ts'
+                use:[
+                    'awesome-typescript-loader'
+                ],
+                exclude: [/node_modules\/(?!(ng2-.+|ngx-.+))/]
             },
             {
                 test: /\.html$/,
-                loader: 'html'
-
+                use:[
+                    'html-loader'
+                ]
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'null'
+                use: null
             },
             {
                 test: /\.css$/,
-                loader: 'null'
+                use:  null
             }
         ]
     }
-}
+};
