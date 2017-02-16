@@ -9,5 +9,3 @@ QuickStarter and Tutorial For Angular2 ＆ ES6 ＆ Webpack
 - clone this repo 
 - npm install
 - webpack -w
-- npm install http-server
-- http-server
