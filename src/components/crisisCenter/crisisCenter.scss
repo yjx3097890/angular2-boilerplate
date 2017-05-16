@@ -1,0 +1,13 @@
+@mixin hover-color($color) {
+  &:hover {
+    color: $color;
+  }
+}
+
+h2 {
+  display: block;
+  text-align: center;
+  position: relative;
+  top: 40%;
+  @include hover-color(blue);
+}

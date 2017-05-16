@@ -8,7 +8,6 @@ import { HeroService } from '../../service/HeroService';
 import  Hero  from '../../models/Hero';
 
 @Component({
-    moduleId: String(module.id),
     selector: 'hero-search',
     templateUrl: 'heroSearch.html',
     styleUrls: [ 'heroSearch.css' ],

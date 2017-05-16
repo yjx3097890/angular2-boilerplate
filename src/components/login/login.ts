@@ -5,7 +5,6 @@ import { ActivatedRoute, Params, Router, NavigationExtras } from '@angular/route
 import { AuthService } from '../../service/AuthService';
 
 @Component({
-    moduleId: String(module.id),
     selector: 'login',//没用，用路由导航
     templateUrl: 'login.html',
     styleUrls: ['login.css']

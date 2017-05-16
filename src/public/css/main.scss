@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+//Add variables here:
+$t-white: rgba(255, 255, 255, 0.3);
+$icon-length: 300px;
+$standard-border: (5px solid black);
+$t-red: rgba(255, 0, 0, 1);
+
+
+body{
+    background-color: $t-red;
+}
+
+h1 {
+    font-family: Roboto, sans-serif;
+    text-align: center;
+}
+
+.banner {
+    font-family: 'Pacifico', cursive;
+    height: 400px;
+    border: {
+        top: $standard-border;
+        bottom: $standard-border;
+    }
+    .slogan {
+        position: absolute;
+        border: $standard-border;
+        top: 200px;
+        left: 25%;
+        width: 50%;
+        height: 200px;
+        text-align: center;
+        background-color: $t-white;
+        span {
+            font-size: 24px;
+            line-height: 200px;
+        }
+    }
+}
+
+.container {
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    .icon {
+        display: inline-block;
+        margin: 2%;
+        border: $standard-border;
+        font-size: 32px;
+        width: $icon-length;
+        height: $icon-length;
+    }
+}

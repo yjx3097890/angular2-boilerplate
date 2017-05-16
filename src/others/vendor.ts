@@ -15,3 +15,5 @@ import './rxjs-extensions';
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
 import "../public/css/styles.css";
+
+import "../public/css/main.scss";

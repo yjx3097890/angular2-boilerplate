@@ -4,7 +4,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-    moduleId: String(module.id),
     selector: 'admin-dashboard',//没用，用路由导航
     templateUrl: 'adminDashboard.html',
     styleUrls: ['adminDashboard.css']

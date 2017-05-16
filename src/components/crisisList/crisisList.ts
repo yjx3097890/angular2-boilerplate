@@ -10,7 +10,6 @@ import { CrisisService } from '../../service/CrisisService';
 
 
 @Component({
-    moduleId: String(module.id),
     selector: 'crisis-list',
     templateUrl: 'crisisList.html',
     styleUrls: ['crisisList.css']

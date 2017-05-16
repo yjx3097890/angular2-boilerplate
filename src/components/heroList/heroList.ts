@@ -10,7 +10,6 @@ import {HeroService} from '../../service/HeroService';
 
 
 @Component({
-    moduleId: String(module.id),
     selector: 'hero-list', //没用。。
     templateUrl: './heroList.html',
     styleUrls: ['./heroList.css']

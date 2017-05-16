@@ -5,7 +5,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 
 
 @Component({
-    moduleId: String(module.id),
     selector: 'crisis-home',
     templateUrl: 'crisisHome.html',
     styleUrls: ['crisisHome.css']

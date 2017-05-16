@@ -6,7 +6,6 @@ import Crisis from '../../models/Crisis';
 import { DialogService } from '../../service/DialogService';
 
 @Component({
-    moduleId: String(module.id),
     selector: 'crisis-detail',
     templateUrl: 'crisisDetail.html',
     styleUrls: ['crisisDetail.css']

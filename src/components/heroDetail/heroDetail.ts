@@ -7,7 +7,6 @@ import  Hero from '../../models/Hero'
 import { HeroService } from '../../service/HeroService';
 
 @Component({
-    moduleId: String(module.id),
     selector: 'hero-detail',
     templateUrl: './heroDetail.html',
     styleUrls: ['./heroDetail.css']

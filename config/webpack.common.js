@@ -50,18 +50,30 @@ module.exports = {
                     }
                 ]
             },
+
             {
                 test: /\.css$/,
                 include: [absolutePath('src/public')],
                 use:  ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader'] })
             },
             {
+                test: /\.scss$/,
+                include: [absolutePath('src/public')],
+                use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: ['css-loader', "sass-loader"] })
+            },
+
+            {
                 test: /\.(html|css)$/,
                 exclude: [absolutePath('src/public')],
                 use: [
                     'raw-loader'
                     ]
-            }
+            },
+            {
+                test: /\.scss$/,
+                exclude: [absolutePath('src/public')],
+                use: ['raw-loader', "sass-loader"]
+            },
         ]
     },
 
@@ -80,10 +92,6 @@ module.exports = {
             {
                 from: absolutePath('src/public/font'),
                 to: 'font'
-            },
-            {
-                from: absolutePath('src/public/css'),
-                to: 'css'
             }
         ], {
             copyUnmodified: false
